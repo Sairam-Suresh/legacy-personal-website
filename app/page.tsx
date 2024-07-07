@@ -207,7 +207,7 @@ export default function Home() {
           </ul>
 
           <footer className={"text-center py-5 text-gray-500"}>
-            Created with ❤️ by Sairam Suresh
+            Created with ❤️ by Sairam Suresh. Made with Next.js and TailwindCSS.
           </footer>
         </div>
       </main>
