@@ -4,23 +4,16 @@ import SchoolInfoCard from "@/components/school_info_card";
 import ProjectInfoCard from "@/components/project_info_card";
 import React from "react";
 import Socials from "@/components/socials";
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
-{/*Navigation Bar*/}
-{/*<div*/}
-{/*    className={"h-1/3 w-full sticky top-5 border-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1 select-none lg:m-2 md:m-auto"}>*/}
-{/*    <div className={"md:flex md:flex-row md:justify-around "}>*/}
-{/*        <p className={"text-xl hover:underline border-white underline-offset-auto text-center"}>Home</p>*/}
-{/*        <p className={"text-xl hover:underline underline-offset-auto text-center"}>About Me</p>*/}
-{/*        <p className={"text-xl hover:underline underline-offset-auto text-center"}>Projects</p>*/}
-{/*        <p className={"text-xl hover:underline underline-offset-auto text-center"}>Achievements</p>*/}
-{/*        <p className={"text-xl hover:underline underline-offset-auto text-center"}>Quote</p>*/}
-{/*        <p className={"text-xl hover:underline underline-offset-auto text-center"}>Contacts</p>*/}
-{/*    </div>*/}
-{/*</div>*/}
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
-      <main className="flex min-h-screen flex-col items-center pt-5 m-2 md:size-fit md:m-5 xl:m-auto xl:size-1/2 space-y-5">
+      <main className="flex min-h-screen flex-col items-center pt-5 m-2 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
         <div
             // bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-cyan-500
             className={"flex flex-col items-center"}>
@@ -84,13 +77,15 @@ export default function Home() {
               I was given the task to redevelop the android version of the MathX App, made by SST Inc.
               I remade the app in Flutter, Google's Cross Platform Development Toolkit.
             </p>
-            <a href={"https://www.github.com/sairam-suresh/mathx"} className={"aspect-square"}>
-              <div className={"flex flex-row justify-normal m-2"}>
-                <p className={"w-full"}>View on Github</p>
-                <Image
-                    src={"/github.png"} alt={"Github"} width={20} height={20} className={"aspect-square"}/>
-              </div>
-            </a>
+
+            <div className={"hover:border-2 border-white rounded-lg"}>
+              <a href={"https://www.github.com/sairam-suresh/mathx"} className={"aspect-square"}>
+                <div className={"flex w-full flex-row justify-center lg:justify-start xl:justify-start m-2 space-x-1"}>
+                  <p className={""}>View on Github</p>
+                  <FontAwesomeIcon icon={faGithub} className={"fas fa-github"} size={"lg"}/>
+                </div>
+              </a>
+            </div>
           </ProjectInfoCard>
 
           <ProjectInfoCard src={"/announcer.png"} alt={"SST Announcer"} name={"SST Announcer"} width={150}
@@ -101,13 +96,14 @@ export default function Home() {
               I remade the app in Flutter, Google's Cross Platform Development Toolkit.
             </p>
 
-            <a href={"https://www.github.com/sairam-suresh/sst-announcer"}>
-              <div className={"flex flex-row justify-normal m-2"}>
-                <p className={"w-full"}>View on Github</p>
-                <Image
-                    src={"/github.png"} alt={"Github"} width={20} height={20} className={"aspect-square"}/>
-              </div>
-            </a>
+            <div className={"hover:border-2 border-white rounded-lg"}>
+              <a href={"https://www.github.com/sairam-suresh/sst-announcer"} className={"aspect-square"}>
+                <div className={"flex w-full flex-row justify-center lg:justify-start xl:justify-start m-2 space-x-1"}>
+                  <p className={""}>View on Github</p>
+                  <FontAwesomeIcon icon={faGithub} className={"fas fa-github"} size={"lg"}/>
+                </div>
+              </a>
+            </div>
           </ProjectInfoCard>
 
           <ProjectInfoCard src={"/stacked.png"} alt={"Stacked"} name={"Stacked (WIP)"} width={150}
@@ -118,16 +114,17 @@ export default function Home() {
               app which can support them in said duties.
             </p>
 
-            <a href={"https://www.github.com/sairam-suresh/scout-app-enhanced"}>
-              <div className={"flex flex-row justify-normal m-2"}>
-                <p className={"w-full"}>View on Github</p>
-                <Image
-                    src={"/github.png"} alt={"Github"} width={20} height={20} className={"aspect-square"}/>
-              </div>
-            </a>
+            <div className={"hover:border-2 border-white rounded-lg"}>
+              <a href={"https://www.github.com/sairam-suresh/scout-app-enhanced"} className={"aspect-square"}>
+                <div className={"flex w-full flex-row justify-center lg:justify-start xl:justify-start m-2 space-x-1"}>
+                  <p className={""}>View on Github</p>
+                  <FontAwesomeIcon icon={faGithub} className={"fas fa-github"} size={"lg"}/>
+                </div>
+              </a>
+            </div>
           </ProjectInfoCard>
 
-          <ProjectInfoCard src={"/placeholder.png"} alt={"Tello Drone Controller"} name={"Tello Drone Controller"}
+          <ProjectInfoCard src={"/placeholder.png"} alt={"Tello Drone Controller (WIP)"} name={"Tello Drone Controller (WIP)"}
                            width={150}
                            height={150} className={"rounded-3xl aspect-square m-auto"}>
             <p>Creator and Flutter Developer</p>
