@@ -10,28 +10,28 @@ config.autoAddCss = false;
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
       <main className="flex min-h-screen flex-col items-center pt-5 m-2 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
-        <div
-            // bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-cyan-500
-            className={"flex flex-col items-center"}>
-          <LinearGradient gradient={['to left', '#17acff ,#ff68f0']}
+        <div className={"flex flex-col items-center"}>
+          <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
                           fallbackColor="black">
             <p className={"text-5xl lg:text-6xl"}>Sairam Suresh</p>
           </LinearGradient>
           <p className={"text-center py-2 text-xl lg:text-2xl"}>An Aspiring Computer Scientist and Full Stack App Developer</p>
 
           <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
-                 className={"aspect-square w-80 h-80 object-cover rounded-full"}/>
+                 className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
           <Socials />
         </div>
 
         {/*About Me*/}
         <div className={"space-y-2 pt-6"}>
           {/*Intro*/}
-          <p className={"font-bold text-4xl text-center"}>About Me</p>
+          <Header text={"About Me"}/>
+
           <p className={"text-wrap text-center"}>
             I am Sairam Suresh, an aspiring Software Engineer.
             I am a self-taught programmer who currently specialises in building applications to benefit the
@@ -42,8 +42,9 @@ export default function Home() {
             learn others such as Python, Swift (SwiftUI), and Dart (Flutter).
           </p>
 
+
           {/*Leadership Roles in Schools*/}
-          <p className={"font-bold text-2xl w-full text-center lg:text-left xl:text-left pt-2"}>Leadership Roles in
+          <p className={"font-bold text-2xl w-full text-center pt-2"}>Leadership Roles in
             Schools</p>
           {/* SST */}
           <SchoolInfoCard src={"/sst.png"} alt={"SST Singapore"}
@@ -67,7 +68,7 @@ export default function Home() {
         {/*Projects*/}
         <div className={"pt-6 space-y-2"}>
           {/*Intro*/}
-          <p className={"font-bold text-4xl text-center"}>My Projects</p>
+          <Header text={"My Projects"}/>
           <p className={"text-center"}>These are some projects/experiments that I have embarked on during my programming journey</p>
 
           <ProjectInfoCard src={"/mathx.png"} alt={"MathX"} name={"MathX"} width={150} height={150}
@@ -138,10 +139,9 @@ export default function Home() {
         {/*Achievements*/}
         <div className={"pt-6 space-y-2"}>
           {/*Intro*/}
-          <p className={"font-bold text-4xl text-center"}>Achievements</p>
-          <ul className="list-disc space-y-2">
-            <li className="">
-              <div className="font-bold text-center lg:text-left xl:text-left text-2xl">2024</div>
+          <Header text={"Achievements"}/>
+          <div className="space-y-2">
+              <div className="font-bold text-center text-2xl">2024</div>
               <ul className="list-disc pl-4 ml-4 space-y-1">
                 <li>Won 1st place for innovative prototype at Discover Week: SIT-SST Workshop (Battling
                   Climate Change with Technologies)
@@ -150,9 +150,7 @@ export default function Home() {
                   from Discover Week
                 </li>
               </ul>
-            </li>
-            <li className="">
-              <div className="font-bold text-center lg:text-left xl:text-left text-2xl">2023</div>
+              <div className="font-bold text-center text-2xl">2023</div>
               <ul className="list-disc pl-4 ml-4 space-y-1">
                 <li>Perse Coding Team Challenge Round 1 (Merit Award) - Solved programming problems
                   using Python
@@ -167,41 +165,36 @@ export default function Home() {
                   light angle and solar panel voltage
                 </li>
               </ul>
-            </li>
-            <li className="">
-              <div className="font-bold text-center lg:text-left xl:text-left text-2xl">2022</div>
+              <div className="font-bold text-center text-2xl">2022</div>
               <ul className="list-disc pl-4 ml-4 space-y-1">
-                <li className="text-white">Young Technopreneurship Challenge (Participation) - Pitched an AR
+                <li>Young Technopreneurship Challenge (Participation) - Pitched an AR
                   app for phone repairs
                 </li>
-                <li className="text-white">Opportunity X (3rd Team Placing) - Presented ISS research on
+                <li>Opportunity X (3rd Team Placing) - Presented ISS research on
                   light angle and solar panel voltage
                 </li>
-                <li className="text-white">International Online Science Project Competition (INTOC) (Silver
+                <li>International Online Science Project Competition (INTOC) (Silver
                   Award) - Presented ISS research on light angle and solar panel voltage
                 </li>
-                <li className="text-white">VJC-ASTAR Science Fair (Participation) - Presented ISS research
+                <li>VJC-ASTAR Science Fair (Participation) - Presented ISS research
                   on light angle and solar panel voltage
                 </li>
-                <li className="text-white">Celebrations@SST - Book Prize (Tamil) and Interview Opportunity
+                <li>Celebrations@SST - Book Prize (Tamil) and Interview Opportunity
                 </li>
-                <li className="text-white">Design Thinking with Robotics and Computational Thinking (Bronze
+                <li>Design Thinking with Robotics and Computational Thinking (Bronze
                   Award) - Solved problems using computational thinking
                 </li>
-                <li className="text-white">Singapore and Asian Schools Math Olympiad Competition (Bronze)
+                <li>Singapore and Asian Schools Math Olympiad Competition (Bronze)
                 </li>
               </ul>
-            </li>
-            <li className="">
-              <div className="font-bold text-center lg:text-left xl:text-left text-2xl">2021</div>
+              <div className="font-bold text-center text-2xl">2021</div>
               <ul className="list-disc pl-4 ml-4 space-y-1">
-                <li className="text-white">Edusave Good Progress Award</li>
-                <li className="text-white">Edusave Certificate of Academic Achievement</li>
-                <li className="text-white">Singapore and Asian Schools Math Olympiad Competition (Bronze)
+                <li>Edusave Good Progress Award</li>
+                <li>Edusave Certificate of Academic Achievement</li>
+                <li>Singapore and Asian Schools Math Olympiad Competition (Bronze)
                 </li>
               </ul>
-            </li>
-          </ul>
+          </div>
 
           <footer className={"text-center py-5 text-gray-500"}>
             Created with ❤️ by Sairam Suresh. Made with Next.js and TailwindCSS.
