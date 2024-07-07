@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         {/*About Me*/}
-        <div className={"space-y-2"}>
+        <div className={"space-y-2 pt-6"}>
           {/*Intro*/}
           <p className={"font-bold text-4xl text-center"}>About Me</p>
           <p className={"text-wrap text-center"}>
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/*Projects*/}
-        <div className={"pt-5 space-y-2"}>
+        <div className={"pt-6 space-y-2"}>
           {/*Intro*/}
           <p className={"font-bold text-4xl text-center"}>My Projects</p>
           <p className={"text-center"}>These are some projects/experiments that I have embarked on during my programming journey</p>
@@ -139,11 +139,9 @@ export default function Home() {
         </div>
 
         {/*Achievements*/}
-        <div className={"pt-5 space-y-2"}>
+        <div className={"pt-6 space-y-2"}>
           {/*Intro*/}
           <p className={"font-bold text-4xl text-center"}>Achievements</p>
-          <p className={"text-center"}>A list of Achievements I obtained</p>
-
           <ul className="list-disc space-y-2">
             <li className="">
               <div className="font-bold text-center lg:text-left xl:text-left text-2xl">2024</div>
