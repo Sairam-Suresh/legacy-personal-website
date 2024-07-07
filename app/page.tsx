@@ -50,7 +50,7 @@ export default function Home() {
           </p>
 
           {/*Leadership Roles in Schools*/}
-          <p className={"font-bold text-2xl w-full text-center lg:text-left xl:text-left"}>Leadership Roles in
+          <p className={"font-bold text-2xl w-full text-center lg:text-left xl:text-left pt-2"}>Leadership Roles in
             Schools</p>
           {/* SST */}
           <SchoolInfoCard src={"/sst.png"} alt={"SST Singapore"}
