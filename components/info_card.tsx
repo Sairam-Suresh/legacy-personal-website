@@ -10,8 +10,8 @@ interface ProjectCardProps {
     className?: string,
     alt?: string,
     name: string,
-    width: number,
-    height: number,
+    width?: number,
+    height?: number,
     role: string,
     children?: React.ReactNode
 }
@@ -37,8 +37,8 @@ function InfoCard(props: ProjectCardProps) {
 
                 <div>
                     {props.src != null ? <Image src={props.src} alt={props.alt ?? props.name}
-                                                width={props.width}
-                                                height={props.height} className={props.className}/> : <></>}
+                                                width={props.width!}
+                                                height={props.height!} className={props.className}/> : <></>}
                 </div>
             </div>
         </div>

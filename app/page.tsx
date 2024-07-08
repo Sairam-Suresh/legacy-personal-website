@@ -15,15 +15,16 @@ import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
 import Container from "@/components/container";
+import Link from "next/link";
 
 export default function Home() {
     return (
         <main
-            className="flex min-h-screen flex-col items-center pt-5 m-2 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
+            className="flex min-h-screen flex-col items-center pt-5 m-5 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
             <div className={"flex flex-col items-center justify-center h-screen"}>
                 <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
                                 fallbackColor="black">
-                    <p className={"font-extrabold text-5xl lg:text-6xl"}>Sairam Suresh</p>
+                    <p id={"top"} className={"font-extrabold text-5xl lg:text-6xl"}>Sairam Suresh</p>
                 </LinearGradient>
                 <p className={"text-center py-2 text-xl lg:text-2xl"}>An Aspiring Computer Scientist and Full Stack
                     App
@@ -44,10 +45,26 @@ export default function Home() {
                 <div className={"h-1/6"}/>
             </div>
 
+            <div
+                className={"h-1/3 w-full sticky top-5 border-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1 select-none lg:m-2 md:m-auto hidden lg:block"}>
+                <div className={"md:flex md:flex-row md:justify-around "}>
+                    <Link href={"#aboutme"} className={"text-lg hover:underline underline-offset-auto text-center"}>About
+                        Me</Link>
+                    <Link href={"#projects"}
+                          className={"text-lg hover:underline underline-offset-auto text-center"}>Projects</Link>
+                    <Link href={"#achievements"}
+                          className={"text-lg hover:underline underline-offset-auto text-center"}>Achievements</Link>
+                    <Link href={"#VIA"}
+                          className={"text-lg hover:underline underline-offset-auto text-center"}>VIA</Link>
+                    <Link href={"#events"}
+                          className={"text-lg hover:underline underline-offset-auto text-center"}>Events</Link>
+                </div>
+            </div>
+
             {/*About Me*/}
             <Container topPadding={false}>
                 {/*Intro*/}
-                <Header text={"About Me"}/>
+                <Header text={"About Me"} id={"aboutme"}/>
 
                 <p className={"text-wrap text-center"}>
                     I am Sairam Suresh, an aspiring Software Engineer.
@@ -88,7 +105,7 @@ export default function Home() {
             {/*Projects*/}
             <Container>
                 {/*Intro*/}
-                <Header text={"My Projects"}/>
+                <Header text={"My Projects"} id={"projects"}/>
                 <p className={"text-center"}>These are some projects/experiments that I have embarked on during my
                     programming journey</p>
 
@@ -98,7 +115,7 @@ export default function Home() {
                         I was given the task to redevelop the android version of the MathX App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
                     </p>
-                    <div >
+                    <div>
                         <ViewInGithub url={"https://www.github.com/sairam-suresh/mathx"}/>
                     </div>
                 </InfoCard>
@@ -139,68 +156,77 @@ export default function Home() {
             {/*Achievements*/}
             <Container>
                 {/*Intro*/}
-                <Header text={"Achievements"}/>
+                <Header text={"Achievements"} id={"achievements"}/>
                 <div className="space-y-2">
                     <div className="font-bold text-center text-2xl">2024</div>
-                    <ul className="list-disc pl-4 ml-4 space-y-1">
-                        <li>Won 1st place for innovative prototype at Discover Week: SIT-SST Workshop (Battling
-                            Climate Change with Technologies)
-                        </li>
-                        <li>Won "Sustainable Living Award" from A*Star at IDEX by ACS(I) - Presented product
-                            from Discover Week
-                        </li>
-                    </ul>
+                    <InfoCard name={"Discover Week: SIT-SST-ST Workshop (Food Security)"} role={"Won First Place"}>
+                        <div className={"space-y-2"}>
+                            <p>
+                                This workshop was held by SIT and SST to help students understand the importance of food
+                                security and allows students to get hands-on with creating their own solutions
+                            </p>
+                            <p>
+                                Created the GreenBoxes App, which is able to administrate
+                                Smart Plant Incubators using Bluetooth. This Project won first place.
+                            </p>
+                            <p>
+                                By allowing Singaporeans to own these small plant incubators which can fit into unused spaces
+                                in their homes, it allows Singapore to become more self-sufficient in terms of food, promoting
+                                greater food security.
+                            </p>
+                        </div>
+                    </InfoCard>
+
+                    <InfoCard name={"IDEX by ACS(I)"} role={"Won \"Sustainable Living Award\" from A*Star"}>
+                        <div className={"space-y-2"}>
+                            <p>
+                                The project from Discover Week was submitted to IDEX by ACS(I) and won the Sustainable
+                                Living Award from A*Star.
+                            </p>
+                        </div>
+                    </InfoCard>
+
                     <div className="font-bold text-center text-2xl">2023</div>
-                    <ul className="list-disc pl-4 ml-4 space-y-1">
-                        <li>Perse Coding Team Challenge Round 1 (Merit Award) - Solved programming problems
-                            using Python
-                        </li>
-                        <li>IMDA National Youth Tech Championship (Participation) - Learned to program DJI Tello
-                            Drones (Python)
-                        </li>
-                        <li>Illustratum 2023 (Merit Award) - Used modelling to demonstrate the three-body
-                            problem
-                        </li>
-                        <li>Singapore Science and Engineering Fair (Participation) - Presented ISS research on
-                            light angle and solar panel voltage
-                        </li>
-                    </ul>
+                    <InfoCard name={"Perse Coding Team Challenge Round 1"} role={"Gold Award"}>
+                        Solved Programming Problems using Python
+                    </InfoCard>
+                    <InfoCard name={"IMDA National Youth Tech Championship"} role={"Quarter-Finalists"}>
+                        Learned to program DJI Tello Drones (Python)
+                    </InfoCard>
+                    <InfoCard name={"NUS Illustratum - A Hallway Physics Competition"} role={"Merit Award"}>
+                        Used modelling to demonstrate the three-body problem
+                    </InfoCard>
+                    <InfoCard name={"Singapore Science and Engineering Fair"} role={"Participation"}>
+                        Presented ISS research on light angle and solar panel voltage
+                    </InfoCard>
                     <div className="font-bold text-center text-2xl">2022</div>
-                    <ul className="list-disc pl-4 ml-4 space-y-1">
-                        <li>Young Technopreneurship Challenge (Participation) - Pitched an AR
-                            app for phone repairs
-                        </li>
-                        <li>Opportunity X (3rd Team Placing) - Presented ISS research on
-                            light angle and solar panel voltage
-                        </li>
-                        <li>International Online Science Project Competition (INTOC) (Silver
-                            Award) - Presented ISS research on light angle and solar panel voltage
-                        </li>
-                        <li>VJC-ASTAR Science Fair (Participation) - Presented ISS research
-                            on light angle and solar panel voltage
-                        </li>
-                        <li>Celebrations@SST - Book Prize (Tamil) and Interview Opportunity
-                        </li>
-                        <li>Design Thinking with Robotics and Computational Thinking (Bronze
-                            Award) - Solved problems using computational thinking
-                        </li>
-                        <li>Singapore and Asian Schools Math Olympiad Competition (Bronze)
-                        </li>
-                    </ul>
+                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"}>
+                        Presented ISS research on light angle and solar panel voltage
+                    </InfoCard>
+                    <InfoCard name={"International Online Science Project Competition (INTOC)"} role={"Silver Award"}>
+                        Presented ISS research on light angle and solar panel voltage
+                    </InfoCard>
+                    <InfoCard name={"Young Technopreneurship Challenge"} role={"Participation"}>
+                        Pitched an AR app for phone repairs
+                    </InfoCard>
+                    <InfoCard name={"VJC-ASTAR Science Fair"} role={"Participation"}>
+                        Presented ISS research on light angle and solar panel voltage
+                    </InfoCard>
+                    <InfoCard name={"Celebrations@SST"} role={"Book Prize (Tamil) and Interview Opportunity"}>
+                        I got the opportunity to be interviewed by the school.
+                    </InfoCard>
                     <div className="font-bold text-center text-2xl">2021</div>
-                    <ul className="list-disc pl-4 ml-4 space-y-1">
-                        <li>Edusave Good Progress Award</li>
-                        <li>Edusave Certificate of Academic Achievement</li>
-                        <li>Singapore and Asian Schools Math Olympiad Competition (Bronze)
-                        </li>
-                    </ul>
+                    <InfoCard name={"Edusave Good Progress Award"} role={"Obtained Award"} />
+                    <InfoCard name={"Edusave Certificate of Academic Achievement"} role={"Obtained Award"} />
+                    <InfoCard name={"Singapore and Asian Schools Math Olympiad Competition"} role={"Bronze Award"} />
+                    <InfoCard name={"Design Thinking with Robotics and Computational Thinking"} role={"Bronze Award"} />
                 </div>
             </Container>
 
             {/*Service Learning*/}
             <Container>
                 {/*Intro*/}
-                <Header text={"Service Learning"}/>
+                <Header text={"Service Learning"} id={"VIA"}/>
                 <p className={"text-center"}>
                     I am a firm believer in giving back to the community. Here are some of the service learning projects
                     that I have participated in.
@@ -215,9 +241,9 @@ export default function Home() {
                     </p>
                 </InfoCard>
 
-                <InfoCard src={"/dcb.png"} name={"S301 Service Learning Project (2022-2023)"} width={150}
+                <InfoCard src={"/dcb.png"} name={"Cyber Wellness Student Ambassador Programme Outreach to Primary Schools"} width={150}
                           height={150} className={"rounded-3xl aspect-square m-auto"}
-                          role={"Cyber Wellness Student Ambassador Programme Outreach to Primary Schools"}>
+                          role={"Tech Support / Running Committee"}>
                     <p>
                         In the years 2022 and 2023, I helped with setting up the logistics for this programme,
                         and was part of the organising committee respectively.
@@ -250,7 +276,7 @@ export default function Home() {
             </Container>
 
             <Container>
-                <Header text={"Events"}/>
+                <Header text={"Events"} id={"events"}/>
                 <p className={"text-center"}>These are some programmes that I have participated in.</p>
                 <InfoCard name={"Swift Accelerator Programme"} src={"/sap.png"} width={150}
                           height={150} className={"rounded-3xl aspect-square m-auto"}
@@ -261,13 +287,13 @@ export default function Home() {
                     </p>
                 </InfoCard>
 
-                <InfoCard name={"Sensetime x CodingLab AI Bootcamp"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                <InfoCard name={"Sensetime x CodingLab AI Bootcamp"} className={"rounded-3xl aspect-square m-auto"}
                           role={"Participant"}>
                     <p>
                         I participated in this AI Bootcamp, where I learnt more about using Python
                         for AI and ML and also scored a Distinction and Best Overall Award.
                     </p>
+                    <Image src={"/sensetime_codinglab.jpg"} alt={"Sensetime AI Bootcamp"} width={150} height={150} className={"w-full"} />
                 </InfoCard>
             </Container>
 
