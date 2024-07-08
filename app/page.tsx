@@ -24,7 +24,9 @@ export default function Home() {
         <main
             className="flex min-h-screen flex-col items-center pt-5 m-5 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
             <div className={"flex flex-col items-center justify-center h-screen"}>
-                <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
+                <LinearGradient gradient={['to left', '#17' +
+                '' +
+                'acff, #ff68f0']}
                                 fallbackColor="black">
                     <p id={"top"} className={"font-extrabold text-5xl lg:text-6xl"}>Sairam Suresh</p>
                 </LinearGradient>
@@ -63,6 +65,7 @@ export default function Home() {
                 </div>
             </div>
 
+
             {/*About Me*/}
             <Container topPadding={false}>
                 {/*Intro*/}
@@ -87,7 +90,7 @@ export default function Home() {
                     Schools</p>
                 {/* SST */}
                 <SchoolInfoCard src={"/sst.png"} alt={"SST Singapore"}
-                                name={"School of Science and Technology, Singapore"} width={300} height={150}>
+                                name={"School of Science and Technology, Singapore"} width={250} height={100}>
                     <li>Class Exco (2021)</li>
                     <li>Flag Raising 2IC for Scouts (2022)</li>
                     <li>SST Inc. Taskforce for React in SST Inc. (2022)</li>
@@ -97,8 +100,8 @@ export default function Home() {
                 </SchoolInfoCard>
 
                 {/*GESPS*/}
-                <SchoolInfoCard src={"/gesps.png"} alt={"GESPS"} name={"Gan Eng Seng Primary School"} width={300}
-                                height={150}>
+                <SchoolInfoCard src={"/gesps.png"} alt={"GESPS"} name={"Gan Eng Seng Primary School"} width={250}
+                                height={100}>
                     <li>Prefect (2017-2018)</li>
                     <li>Deputy Head Prefect for Welfare (2019-2020)</li>
                 </SchoolInfoCard>
@@ -119,7 +122,8 @@ export default function Home() {
                     </p>
                     <div className={"flex w-auto flex-col space-y-2"}>
                         <ViewInGithub url={"https://www.github.com/sairam-suresh/mathx"}/>
-                        <ViewInStore url={"https://play.google.com/store/apps/details?id=org.sstinc.mathx"} iOS={false} />
+                        <ViewInStore url={"https://play.google.com/store/apps/details?id=org.sstinc.mathx"}
+                                     iOS={false}/>
                     </div>
                 </InfoCard>
 
@@ -132,7 +136,8 @@ export default function Home() {
                     </p>
                     <div className={"flex w-auto flex-col space-y-2"}>
                         <ViewInGithub url={"https://www.github.com/sairam-suresh/sst-announcer"}/>
-                        <ViewInStore url={"https://play.google.com/store/apps/details?id=com.sst.anouncements"} iOS={false} />
+                        <ViewInStore url={"https://play.google.com/store/apps/details?id=com.sst.anouncements"}
+                                     iOS={false}/>
                     </div>
                 </InfoCard>
 
@@ -194,8 +199,10 @@ export default function Home() {
                     name={"Access Microbit Sensors From PC"}
                     role={"Creator and Python Developer"}>
                     <p>
-                        This project attempts to create a Python program that can retrieve values from the Microbit sensors through the serial interface.
-                        It is also designed in such a way that can allow it to be imported and used by other python programs.
+                        This project attempts to create a Python program that can retrieve values from the Microbit
+                        sensors through the serial interface.
+                        It is also designed in such a way that can allow it to be imported and used by other python
+                        programs.
                     </p>
 
                     <ViewInGDrive
@@ -240,6 +247,14 @@ export default function Home() {
                                 promoting
                                 greater food security.
                             </p>
+                            <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
+                                <Image src={"/discoverweek/presentation.jpg"} alt={"Me presenting at DiscoverWeek"}
+                                       width={400}
+                                       height={200} className={"flex-1"}/>
+                                <Image src={"/discoverweek/certificate.jpg"}
+                                       alt={"Receiving Certificate at DiscoverWeek"} width={400}
+                                       height={200} className={""}/>
+                            </div>
                         </div>
                     </InfoCard>
 
@@ -249,6 +264,14 @@ export default function Home() {
                                 The project from Discover Week was submitted to IDEX by ACS(I) and won the Sustainable
                                 Living Award from A*Star.
                             </p>
+                            <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
+                                <Image src={"/IDEX/group_pic.jpg"} alt={"Group Picture for IDEX"} width={200}
+                                       height={400} className={"flex-1"}/>
+                                <Image src={"/IDEX/presenting.jpg"} alt={"Presenting for IDEX"} width={200}
+                                       height={400} className={"flex-1"}/>
+                                <Image src={"/IDEX/setup.jpg"} alt={"Setting Up for IDEX"} width={200}
+                                       height={400} className={"flex-1"}/>
+                            </div>
                         </div>
                     </InfoCard>
 
@@ -360,8 +383,14 @@ export default function Home() {
                         I participated in this AI Bootcamp, where I learnt more about using Python
                         for AI and ML and also scored a Distinction and Best Overall Award.
                     </p>
-                    <Image src={"/sensetime_codinglab.jpg"} alt={"Sensetime AI Bootcamp"} width={150} height={150}
-                           className={"w-full"}/>
+                    <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
+                        <Image src={"/sensetime_bootcamp/award.jpg"} alt={"Sensetime AI Bootcamp"} width={500}
+                               height={200}
+                               className={"flex-1"}/>
+                        <Image src={"/sensetime_bootcamp/presentation.png"} alt={"Sensetime AI Bootcamp"} width={500}
+                               height={200}
+                               className={"flex-1"}/>
+                    </div>
                 </InfoCard>
             </Container>
 
