@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {LinearGradient} from "react-text-gradients";
 import SchoolInfoCard from "@/components/school_info_card";
-import ProjectInfoCard from "@/components/project_info_card";
+import InfoCard from "@/components/info_card";
 import React from "react";
 import Socials from "@/components/socials";
 import "@fortawesome/fontawesome-svg-core/styles.css"
@@ -14,34 +14,36 @@ import {faPython, faSwift, faRust} from "@fortawesome/free-brands-svg-icons";
 import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
+import Container from "@/components/container";
 
 export default function Home() {
     return (
         <main
             className="flex min-h-screen flex-col items-center pt-5 m-2 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
-                <div className={"flex flex-col items-center justify-center h-screen"}>
-                    <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
-                                    fallbackColor="black">
-                        <p className={"text-5xl lg:text-6xl"}>Sairam Suresh</p>
-                    </LinearGradient>
-                    <p className={"text-center py-2 text-xl lg:text-2xl"}>An Aspiring Computer Scientist and Full Stack
-                        App
-                        Developer</p>
+            <div className={"flex flex-col items-center justify-center h-screen"}>
+                <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
+                                fallbackColor="black">
+                    <p className={"font-extrabold text-5xl lg:text-6xl"}>Sairam Suresh</p>
+                </LinearGradient>
+                <p className={"text-center py-2 text-xl lg:text-2xl"}>An Aspiring Computer Scientist and Full Stack
+                    App
+                    Developer</p>
 
-                    <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
-                           className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
-                    <Socials/>
+                <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
+                       className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
+                <Socials/>
 
-                    <div className={"h-1/6"} />
+                <div className={"h-1/6"}/>
 
-                    <div className={"text-lg"}>
-                        Scroll down to learn more about me! <FontAwesomeIcon icon={faArrowDown} className={"fas fa-arrow-down animate-bounce"}
-                                                                             size={"1x"}/>
-                    </div>
+                <div className={"text-lg"}>
+                    Scroll down to learn more about me! <FontAwesomeIcon icon={faArrowDown}
+                                                                         className={"fas fa-arrow-down animate-bounce"}
+                                                                         size={"1x"}/>
                 </div>
+            </div>
 
             {/*About Me*/}
-            <div className={"space-y-2"}>
+            <Container topPadding={false}>
                 {/*Intro*/}
                 <Header text={"About Me"}/>
 
@@ -79,60 +81,61 @@ export default function Home() {
                     <li>Prefect (2017-2018)</li>
                     <li>Deputy Head Prefect for Welfare (2019-2020)</li>
                 </SchoolInfoCard>
-            </div>
+            </Container>
 
             {/*Projects*/}
-            <div className={"pt-6 space-y-2"}>
+            <Container>
                 {/*Intro*/}
                 <Header text={"My Projects"}/>
                 <p className={"text-center"}>These are some projects/experiments that I have embarked on during my
                     programming journey</p>
 
-                <ProjectInfoCard src={"/mathx.png"} alt={"MathX"} name={"MathX"} width={150} height={150}
-                                 className={"rounded-3xl aspect-square m-auto"}>
-                    <p className={"font-bold"}>Developer (Android Side)</p>
+                <InfoCard src={"/mathx.png"} name={"MathX"} width={150} height={150}
+                          className={"rounded-3xl aspect-square m-auto"} role={"Developer (Android Side)"}>
                     <p>
                         I was given the task to redevelop the android version of the MathX App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
                     </p>
-                    <ViewInGithub url={"https://www.github.com/sairam-suresh/mathx"}/>
-                </ProjectInfoCard>
+                    <div >
+                        <ViewInGithub url={"https://www.github.com/sairam-suresh/mathx"}/>
+                    </div>
+                </InfoCard>
 
-                <ProjectInfoCard src={"/announcer.png"} alt={"SST Announcer"} name={"SST Announcer"} width={150}
-                                 height={150} className={"rounded-3xl aspect-square m-auto"}>
-                    <p className={"font-bold"}>Developer (Android Side)</p>
+                <InfoCard src={"/announcer.png"} name={"SST Announcer"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Developer (Android Side)"}>
                     <p>
                         I was given the task to redevelop the android version of the SST Announcer App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
                     </p>
                     <ViewInGithub url={"https://www.github.com/sairam-suresh/sst-announcer"}/>
-                </ProjectInfoCard>
+                </InfoCard>
 
-                <ProjectInfoCard src={"/stacked.png"} alt={"Stacked"} name={"Stacked (WIP)"} width={150}
-                                 height={150} className={"rounded-3xl aspect-square m-auto"}>
-                    <p className={"font-bold"}>Creator and Flutter Developer</p>
+                <InfoCard src={"/stacked.png"} name={"Stacked (WIP)"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Creator and Flutter Developer"}>
                     <p>
                         In order to help out my Scout Unit with their admin duties, I am in the progress of creating an
                         app which can support them in said duties.
                     </p>
 
                     <ViewInGithub url={"https://www.github.com/sairam-suresh/scout-app-enhanced"}/>
-                </ProjectInfoCard>
+                </InfoCard>
 
-                <ProjectInfoCard src={"/placeholder.png"} alt={"Tello Drone Controller (WIP)"}
-                                 name={"Tello Drone Controller (WIP)"}
-                                 width={150}
-                                 height={150} className={"rounded-3xl aspect-square m-auto"}>
-                    <p className={"font-bold"}>Creator and Flutter Developer</p>
+                <InfoCard src={"/placeholder.png"}
+                          name={"Tello Drone Controller (WIP)"}
+                          width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Creator and Flutter Developer"}>
                     <p>
                         In this hobbyist project, I experiment with the DJI Tello Drone's SDK and build the most
                         fleshed out controller for it.
                     </p>
-                </ProjectInfoCard>
-            </div>
+                </InfoCard>
+            </Container>
 
             {/*Achievements*/}
-            <div className={"pt-6 space-y-2"}>
+            <Container>
                 {/*Intro*/}
                 <Header text={"Achievements"}/>
                 <div className="space-y-2">
@@ -190,11 +193,86 @@ export default function Home() {
                         </li>
                     </ul>
                 </div>
+            </Container>
 
-                <footer className={"text-center py-5 text-gray-500"}>
-                    <p>Created with ❤️ by Sairam Suresh. Made with Next.js and TailwindCSS.</p>
-                </footer>
-            </div>
+            {/*Service Learning*/}
+            <Container>
+                {/*Intro*/}
+                <Header text={"Service Learning"}/>
+                <p className={"text-center"}>
+                    I am a firm believer in giving back to the community. Here are some of the service learning projects
+                    that I have participated in.
+                </p>
+
+                <InfoCard src={"/engineering_good.png"} name={"S301 Service Learning Project (2023)"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Assisted in creating presentation materials"}>
+                    <p>
+                        I assisted my class in creating the presentation materials in our service learning project with
+                        Engineering Good
+                    </p>
+                </InfoCard>
+
+                <InfoCard src={"/dcb.png"} name={"S301 Service Learning Project (2022-2023)"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Cyber Wellness Student Ambassador Programme Outreach to Primary Schools"}>
+                    <p>
+                        In the years 2022 and 2023, I helped with setting up the logistics for this programme,
+                        and was part of the organising committee respectively.
+                    </p>
+                </InfoCard>
+
+                <InfoCard name={"National Day Commemoration 2023"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Part of Parade Contingent"}>
+                    <p>
+                        I was part of the Parade Contingent for this event.
+                    </p>
+                </InfoCard>
+
+                <InfoCard name={"Sec 2 Learning Alliance Beyond Borders (Vietnam) 2022"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Participant"}>
+                    <p>
+                        My team and I presented about a problem that we had in Singapore and our solution to it
+                    </p>
+                </InfoCard>
+
+                <InfoCard name={"Service at Scout West Area Bicycle and Cycling Workshop 2022"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Participant"}>
+                    <p>
+                        I assisted with the programme by setting up logistics for participants' usage
+                    </p>
+                </InfoCard>
+            </Container>
+
+            <Container>
+                <Header text={"Events"}/>
+                <p className={"text-center"}>These are some programmes that I have participated in.</p>
+                <InfoCard name={"Swift Accelerator Programme"} src={"/sap.png"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Participant"}>
+                    <p>
+                        I participated in the Swift Accelerator Programme where I learnt more
+                        about developing for apple's platforms using Swift and SwiftUI.
+                    </p>
+                </InfoCard>
+
+                <InfoCard name={"Sensetime x CodingLab AI Bootcamp"} width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Participant"}>
+                    <p>
+                        I participated in this AI Bootcamp, where I learnt more about using Python
+                        for AI and ML and also scored a Distinction and Best Overall Award.
+                    </p>
+                </InfoCard>
+            </Container>
+
+            {/*Footer*/}
+            <footer className={"text-center py-5 text-gray-500"}>
+                <p>Created with ❤️ by Sairam Suresh. Made with Next.js and TailwindCSS.</p>
+            </footer>
         </main>
     );
 }
