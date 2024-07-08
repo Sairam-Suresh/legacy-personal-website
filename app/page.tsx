@@ -16,6 +16,8 @@ import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
 import Container from "@/components/container";
 import Link from "next/link";
+import ViewInGDrive from "@/components/view_in_gdrive";
+import ViewInStore from "@/components/view_in_store";
 
 export default function Home() {
     return (
@@ -115,8 +117,9 @@ export default function Home() {
                         I was given the task to redevelop the android version of the MathX App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
                     </p>
-                    <div>
+                    <div className={"flex w-auto flex-col space-y-2"}>
                         <ViewInGithub url={"https://www.github.com/sairam-suresh/mathx"}/>
+                        <ViewInStore url={"https://play.google.com/store/apps/details?id=org.sstinc.mathx"} iOS={false} />
                     </div>
                 </InfoCard>
 
@@ -127,7 +130,10 @@ export default function Home() {
                         I was given the task to redevelop the android version of the SST Announcer App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
                     </p>
-                    <ViewInGithub url={"https://www.github.com/sairam-suresh/sst-announcer"}/>
+                    <div className={"flex w-auto flex-col space-y-2"}>
+                        <ViewInGithub url={"https://www.github.com/sairam-suresh/sst-announcer"}/>
+                        <ViewInStore url={"https://play.google.com/store/apps/details?id=com.sst.anouncements"} iOS={false} />
+                    </div>
                 </InfoCard>
 
                 <InfoCard src={"/stacked.png"} name={"Stacked (WIP)"} width={150}
@@ -160,6 +166,55 @@ export default function Home() {
                         I created this app for my competitions in Discover Week 2024 and IDEX by ACSI
                     </p>
                 </InfoCard>
+                <InfoCard
+                    name={"Controlling a RainbowHAT with a Raspberry Pi and Python"}
+                    role={"Creator and Python Developer"}>
+                    <p>
+                        This project yields a GUI program which can control all the functions of the RainbowHat
+                        except for the Extra GPIO pins.
+                    </p>
+
+                    <ViewInGDrive
+                        url={"https://drive.google.com/file/d/1YRb4NXYbPpxchhNVjap8ThbAYCkxRzBr/view?usp=sharing"}/>
+                </InfoCard>
+                <InfoCard src={"/calculator.png"}
+                          name={"Calculator"}
+                          width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Creator and Python Developer"}>
+                    <p>
+                        I created this Python Calculator App to obtain the Computer Badge in
+                        Scouts
+                    </p>
+
+                    <ViewInGDrive
+                        url={"https://drive.google.com/file/d/1dLOIxXzo5X8GZ4gxnHUbPIz6f3FIR8M5/view?usp=sharing"}/>
+                </InfoCard>
+                <InfoCard
+                    name={"Access Microbit Sensors From PC"}
+                    role={"Creator and Python Developer"}>
+                    <p>
+                        This project attempts to create a Python program that can retrieve values from the Microbit sensors through the serial interface.
+                        It is also designed in such a way that can allow it to be imported and used by other python programs.
+                    </p>
+
+                    <ViewInGDrive
+                        url={"https://drive.google.com/drive/folders/19f1FsaSFvEpW10S24tDI06Lrv0FudxfO?usp=sharing"}/>
+                </InfoCard>
+                <InfoCard
+                    name={"Communication between 2 PCs over a Microbit network"}
+                    role={"Creator and Python Developer"}>
+                    <p>
+                        This project aids in transferring data between 2 computers using the help of Microbit.
+                        This works by first sending the intended message to the sender Microbit through serial.
+                        It will then be broadcasted and the other receiver Microbit connected to another PC
+                        will receive the message and send it to the PC using Serial.
+                    </p>
+
+                    <ViewInGDrive
+                        url={"https://drive.google.com/drive/folders/19f1FsaSFvEpW10S24tDI06Lrv0FudxfO?usp=sharing"}/>
+                </InfoCard>
+
             </Container>
 
             {/*Achievements*/}
@@ -179,8 +234,10 @@ export default function Home() {
                                 Smart Plant Incubators using Bluetooth. This Project won first place.
                             </p>
                             <p>
-                                By allowing Singaporeans to own these small plant incubators which can fit into unused spaces
-                                in their homes, it allows Singapore to become more self-sufficient in terms of food, promoting
+                                By allowing Singaporeans to own these small plant incubators which can fit into unused
+                                spaces
+                                in their homes, it allows Singapore to become more self-sufficient in terms of food,
+                                promoting
                                 greater food security.
                             </p>
                         </div>
@@ -225,10 +282,10 @@ export default function Home() {
                         I got the opportunity to be interviewed by the school.
                     </InfoCard>
                     <div className="font-bold text-center text-2xl">2021</div>
-                    <InfoCard name={"Edusave Good Progress Award"} role={"Obtained Award"} />
-                    <InfoCard name={"Edusave Certificate of Academic Achievement"} role={"Obtained Award"} />
-                    <InfoCard name={"Singapore and Asian Schools Math Olympiad Competition"} role={"Bronze Award"} />
-                    <InfoCard name={"Design Thinking with Robotics and Computational Thinking"} role={"Bronze Award"} />
+                    <InfoCard name={"Edusave Good Progress Award"} role={"Obtained Award"}/>
+                    <InfoCard name={"Edusave Certificate of Academic Achievement"} role={"Obtained Award"}/>
+                    <InfoCard name={"Singapore and Asian Schools Math Olympiad Competition"} role={"Bronze Award"}/>
+                    <InfoCard name={"Design Thinking with Robotics and Computational Thinking"} role={"Bronze Award"}/>
                 </div>
             </Container>
 
@@ -250,7 +307,8 @@ export default function Home() {
                     </p>
                 </InfoCard>
 
-                <InfoCard src={"/dcb.png"} name={"Cyber Wellness Student Ambassador Programme Outreach to Primary Schools"} width={150}
+                <InfoCard src={"/dcb.png"}
+                          name={"Cyber Wellness Student Ambassador Programme Outreach to Primary Schools"} width={150}
                           height={150} className={"rounded-3xl aspect-square m-auto"}
                           role={"Tech Support / Running Committee"}>
                     <p>
@@ -302,7 +360,8 @@ export default function Home() {
                         I participated in this AI Bootcamp, where I learnt more about using Python
                         for AI and ML and also scored a Distinction and Best Overall Award.
                     </p>
-                    <Image src={"/sensetime_codinglab.jpg"} alt={"Sensetime AI Bootcamp"} width={150} height={150} className={"w-full"} />
+                    <Image src={"/sensetime_codinglab.jpg"} alt={"Sensetime AI Bootcamp"} width={150} height={150}
+                           className={"w-full"}/>
                 </InfoCard>
             </Container>
 
