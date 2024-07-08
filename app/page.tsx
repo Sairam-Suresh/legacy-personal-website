@@ -151,6 +151,15 @@ export default function Home() {
                         fleshed out controller for it.
                     </p>
                 </InfoCard>
+                <InfoCard src={"/placeholder.png"}
+                          name={"Green Boxes"}
+                          width={150}
+                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          role={"Creator and Flutter Developer"}>
+                    <p>
+                        I created this app for my competitions in Discover Week 2024 and IDEX by ACSI
+                    </p>
+                </InfoCard>
             </Container>
 
             {/*Achievements*/}
