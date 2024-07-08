@@ -11,6 +11,7 @@ config.autoAddCss = false;
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPython, faSwift, faRust} from "@fortawesome/free-brands-svg-icons";
+import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
 
@@ -18,21 +19,29 @@ export default function Home() {
     return (
         <main
             className="flex min-h-screen flex-col items-center pt-5 m-2 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
-            <div className={"flex flex-col items-center"}>
-                <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
-                                fallbackColor="black">
-                    <p className={"text-5xl lg:text-6xl"}>Sairam Suresh</p>
-                </LinearGradient>
-                <p className={"text-center py-2 text-xl lg:text-2xl"}>An Aspiring Computer Scientist and Full Stack App
-                    Developer</p>
+                <div className={"flex flex-col items-center justify-center h-screen"}>
+                    <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
+                                    fallbackColor="black">
+                        <p className={"text-5xl lg:text-6xl"}>Sairam Suresh</p>
+                    </LinearGradient>
+                    <p className={"text-center py-2 text-xl lg:text-2xl"}>An Aspiring Computer Scientist and Full Stack
+                        App
+                        Developer</p>
 
-                <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
-                       className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
-                <Socials/>
-            </div>
+                    <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
+                           className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
+                    <Socials/>
+
+                    <div className={"h-1/6"} />
+
+                    <div className={"text-lg"}>
+                        Scroll down to learn more about me! <FontAwesomeIcon icon={faArrowDown} className={"fas fa-arrow-down animate-bounce"}
+                                                                             size={"1x"}/>
+                    </div>
+                </div>
 
             {/*About Me*/}
-            <div className={"space-y-2 pt-6"}>
+            <div className={"space-y-2"}>
                 {/*Intro*/}
                 <Header text={"About Me"}/>
 
@@ -81,7 +90,7 @@ export default function Home() {
 
                 <ProjectInfoCard src={"/mathx.png"} alt={"MathX"} name={"MathX"} width={150} height={150}
                                  className={"rounded-3xl aspect-square m-auto"}>
-                    <p>Developer (Android Side)</p>
+                    <p className={"font-bold"}>Developer (Android Side)</p>
                     <p>
                         I was given the task to redevelop the android version of the MathX App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
@@ -91,7 +100,7 @@ export default function Home() {
 
                 <ProjectInfoCard src={"/announcer.png"} alt={"SST Announcer"} name={"SST Announcer"} width={150}
                                  height={150} className={"rounded-3xl aspect-square m-auto"}>
-                    <p>Developer (Android Side)</p>
+                    <p className={"font-bold"}>Developer (Android Side)</p>
                     <p>
                         I was given the task to redevelop the android version of the SST Announcer App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
@@ -101,7 +110,7 @@ export default function Home() {
 
                 <ProjectInfoCard src={"/stacked.png"} alt={"Stacked"} name={"Stacked (WIP)"} width={150}
                                  height={150} className={"rounded-3xl aspect-square m-auto"}>
-                    <p>Creator and Flutter Developer</p>
+                    <p className={"font-bold"}>Creator and Flutter Developer</p>
                     <p>
                         In order to help out my Scout Unit with their admin duties, I am in the progress of creating an
                         app which can support them in said duties.
@@ -114,7 +123,7 @@ export default function Home() {
                                  name={"Tello Drone Controller (WIP)"}
                                  width={150}
                                  height={150} className={"rounded-3xl aspect-square m-auto"}>
-                    <p>Creator and Flutter Developer</p>
+                    <p className={"font-bold"}>Creator and Flutter Developer</p>
                     <p>
                         In this hobbyist project, I experiment with the DJI Tello Drone's SDK and build the most
                         fleshed out controller for it.
@@ -183,7 +192,7 @@ export default function Home() {
                 </div>
 
                 <footer className={"text-center py-5 text-gray-500"}>
-                    Created with ❤️ by Sairam Suresh. Made with Next.js and TailwindCSS.
+                    <p>Created with ❤️ by Sairam Suresh. Made with Next.js and TailwindCSS.</p>
                 </footer>
             </div>
         </main>
