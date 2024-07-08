@@ -23,7 +23,7 @@ function InfoCard(props: ProjectCardProps) {
                 <div
                     className={"flex-1 justify-center text-center place-content-center lg:text-left xl:text-left pt-2"}>
                     <Center>
-                        <p className={jetBrainsMono.className + " font-bold text-lg md:w-1/2 w-full lg:w-full"}>{props.name}</p>
+                        <p className={jetBrainsMono.className + " text-lg md:w-1/2 w-full lg:w-full"}>{props.name}</p>
                     </Center>
                     <Center>
                         <p className={"font-bold md:w-1/2 w-full lg:w-full"}>{props.role}</p>

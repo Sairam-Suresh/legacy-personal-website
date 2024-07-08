@@ -62,6 +62,8 @@ export default function Home() {
                           className={"text-lg hover:underline underline-offset-auto text-center"}>VIA</Link>
                     <Link href={"#events"}
                           className={"text-lg hover:underline underline-offset-auto text-center"}>Events</Link>
+                    <Link href={"#certifications"}
+                          className={"text-lg hover:underline underline-offset-auto text-center"}>Certifications</Link>
                 </div>
             </div>
 
@@ -391,6 +393,14 @@ export default function Home() {
                                height={200}
                                className={"flex-1"}/>
                     </div>
+                </InfoCard>
+            </Container>
+
+            <Container>
+                <Header text={"Certifications"} id={"certifications"}/>
+                <InfoCard name={"App Development with Swift - Associate"} role={"925/1000"}>
+                    I managed to score 925/1000 for my App Development with Swift - Associate Certification Examination
+                    from the Swift Accelerator Programme
                 </InfoCard>
             </Container>
 
