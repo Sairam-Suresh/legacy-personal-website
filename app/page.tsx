@@ -40,6 +40,8 @@ export default function Home() {
                                                                          className={"fas fa-arrow-down animate-bounce"}
                                                                          size={"1x"}/>
                 </div>
+
+                <div className={"h-1/6"}/>
             </div>
 
             {/*About Me*/}
