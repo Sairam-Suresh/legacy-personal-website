@@ -19,7 +19,7 @@ interface ProjectCardProps {
 function InfoCard(props: ProjectCardProps) {
     return (
         <div className={"pt-3"}>
-            <div className={"flex flex-col-reverse lg:flex-row xl:flex-row space-x-2 h-full justify-center"}>
+            <div className={"flex flex-col-reverse lg:flex-row xl:flex-row space-x-2 h-full justify-center justify-items-center"}>
                 <div
                     className={"flex-1 justify-center text-center place-content-center lg:text-left xl:text-left pt-2"}>
                     <Center>

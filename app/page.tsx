@@ -11,7 +11,7 @@ config.autoAddCss = false;
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPython, faSwift, faRust} from "@fortawesome/free-brands-svg-icons";
-import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
+import {faArrowDown, faArrowRight} from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
 import Container from "@/components/container";
@@ -22,11 +22,9 @@ import ViewInStore from "@/components/view_in_store";
 export default function Home() {
     return (
         <main
-            className="flex min-h-screen flex-col items-center pt-5 m-5 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
+            className="flex min-h-screen flex-col text-center items-center pt-5 m-5 md:size-fit md:m-5 lg:m-auto lg:size-1/2 space-y-5">
             <div className={"flex flex-col items-center justify-center h-screen"}>
-                <LinearGradient gradient={['to left', '#17' +
-                '' +
-                'acff, #ff68f0']}
+                <LinearGradient gradient={['to left', '#17acff, #ff68f0']}
                                 fallbackColor="black">
                     <p id={"top"} className={"font-extrabold text-5xl lg:text-6xl"}>Sairam Suresh</p>
                 </LinearGradient>
@@ -37,6 +35,13 @@ export default function Home() {
                 <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
                        className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
                 <Socials/>
+                <a href={"/certificates.pdf"}
+                    className={"mt-5 rounded-full border-2 flex justify-center bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105"}>
+                    <div className={"p-3 flex-row justify-center text-lg space-y-2"}>
+                        <p>Certificates <FontAwesomeIcon icon={faArrowRight}
+                                                         className={"fas fa-arrow-right inline-block"} size={"lg"}/></p>
+                    </div>
+                </a>
 
                 <div className={"h-1/6"}/>
 
@@ -46,12 +51,19 @@ export default function Home() {
                                                                          size={"1x"}/>
                 </div>
 
-                <div className={"h-1/6"}/>
+                <div className={"h-1/6"} id={"aboutme"}/>
             </div>
 
             <div
-                className={"h-1/3 w-full sticky top-5 border-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1 select-none lg:m-2 md:m-auto hidden lg:block"}>
-                <div className={"md:flex md:flex-row md:justify-around "}>
+                className={"h-1/3 w-full sticky top-5 select-none lg:m-2 md:m-auto hidden lg:block z-0"}>
+                <div className={"h-5 w-full bg-black"}/>
+            </div>
+
+            <div
+                className={"h-1/3 w-full sticky top-0 select-none lg:m-2 md:m-auto hidden lg:block z-10"}>
+                <div className={"h-5 w-full bg-black"}/>
+                <div
+                    className={"md:flex md:flex-row md:justify-around border-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded p-1"}>
                     <Link href={"#aboutme"} className={"text-lg hover:underline underline-offset-auto text-center"}>About
                         Me</Link>
                     <Link href={"#projects"}
@@ -71,7 +83,7 @@ export default function Home() {
             {/*About Me*/}
             <Container topPadding={false}>
                 {/*Intro*/}
-                <Header text={"About Me"} id={"aboutme"}/>
+                <Header text={"About Me"}/>
 
                 <p className={"text-wrap text-center"}>
                     I am Sairam Suresh, an aspiring Software Engineer.
@@ -250,12 +262,15 @@ export default function Home() {
                                 greater food security.
                             </p>
                             <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
-                                <Image src={"/discoverweek/presentation.jpg"} alt={"Me presenting at DiscoverWeek"}
-                                       width={400}
-                                       height={200} className={"flex-1"}/>
+                                <Image src={"/discoverweek/groupreward.jpg"}
+                                       alt={"Won 1st Prize at DiscoverWeek"} width={400}
+                                       height={200} className={""}/>
                                 <Image src={"/discoverweek/certificate.jpg"}
                                        alt={"Receiving Certificate at DiscoverWeek"} width={400}
                                        height={200} className={""}/>
+                                <Image src={"/discoverweek/presentation.jpg"} alt={"Me presenting at DiscoverWeek"}
+                                       width={400}
+                                       height={200} className={"flex-1"}/>
                             </div>
                         </div>
                     </InfoCard>
@@ -381,10 +396,11 @@ export default function Home() {
 
                 <InfoCard name={"Sensetime x CodingLab AI Bootcamp"} className={"rounded-3xl aspect-square m-auto"}
                           role={"Participant"}>
-                    <p>
+                    <div>
                         I participated in this AI Bootcamp, where I learnt more about using Python
-                        for AI and ML and also scored a Distinction and Best Overall Award.
-                    </p>
+                        for AI and ML and also scored a <p className={"inline-block font-bold"}>Distinction and Best
+                        Overall Award</p>.
+                    </div>
                     <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
                         <Image src={"/sensetime_bootcamp/award.jpg"} alt={"Sensetime AI Bootcamp"} width={500}
                                height={200}
@@ -398,7 +414,8 @@ export default function Home() {
 
             <Container>
                 <Header text={"Certifications"} id={"certifications"}/>
-                <InfoCard name={"App Development with Swift - Associate"} role={"925/1000"}>
+                <InfoCard name={"App Development with Swift - Associate"} role={"925/1000"}
+                          src={"/app_dev_with_swift_assoc.png"} width={200} height={400} className={"m-auto lg:m-0"}>
                     I managed to score 925/1000 for my App Development with Swift - Associate Certification Examination
                     from the Swift Accelerator Programme
                 </InfoCard>
