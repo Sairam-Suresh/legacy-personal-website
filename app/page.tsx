@@ -18,6 +18,7 @@ import Container from "@/components/container";
 import Link from "next/link";
 import ViewInGDrive from "@/components/view_in_gdrive";
 import ViewInStore from "@/components/view_in_store";
+import ImageCarouselContainer from "@/components/image_carousel_container";
 
 export default function Home() {
     return (
@@ -261,7 +262,7 @@ export default function Home() {
                                 promoting
                                 greater food security.
                             </p>
-                            <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
+                            <ImageCarouselContainer>
                                 <Image src={"/discoverweek/groupreward.jpg"}
                                        alt={"Won 1st Prize at DiscoverWeek"} width={400}
                                        height={200} className={""}/>
@@ -271,7 +272,7 @@ export default function Home() {
                                 <Image src={"/discoverweek/presentation.jpg"} alt={"Me presenting at DiscoverWeek"}
                                        width={400}
                                        height={200} className={"flex-1"}/>
-                            </div>
+                            </ImageCarouselContainer>
                         </div>
                     </InfoCard>
 
@@ -281,14 +282,14 @@ export default function Home() {
                                 The project from Discover Week was submitted to IDEX by ACS(I) and won the Sustainable
                                 Living Award from A*Star.
                             </p>
-                            <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
+                            <ImageCarouselContainer>
                                 <Image src={"/IDEX/group_pic.jpg"} alt={"Group Picture for IDEX"} width={200}
                                        height={400} className={"flex-1"}/>
                                 <Image src={"/IDEX/presenting.jpg"} alt={"Presenting for IDEX"} width={200}
                                        height={400} className={"flex-1"}/>
                                 <Image src={"/IDEX/setup.jpg"} alt={"Setting Up for IDEX"} width={200}
                                        height={400} className={"flex-1"}/>
-                            </div>
+                            </ImageCarouselContainer>
                         </div>
                     </InfoCard>
 
@@ -299,18 +300,28 @@ export default function Home() {
                     <InfoCard name={"IMDA National Youth Tech Championship"} role={"Quarter-Finalists"}>
                         Learned to program DJI Tello Drones (Python)
                     </InfoCard>
-                    <InfoCard name={"NUS Illustratum - A Hallway Physics Competition"} role={"Merit Award"}>
-                        Used modelling to demonstrate the three-body problem
+                    <InfoCard name={"NUS Illustratum - A Hallway Physics Competition"} role={"Merit Award"}
+                    src={"/illustratumaward.jpg"} alt={"Illustratum Merit Award"} width={200} height={500}
+                    className={"rounded-lg"}>
+                        Used modelling to demonstrate the three-body problem, obtained a merit award
                     </InfoCard>
                     <InfoCard name={"Singapore Science and Engineering Fair"} role={"Participation"}>
                         Presented ISS research on light angle and solar panel voltage
                     </InfoCard>
                     <div className="font-bold text-center text-2xl">2022</div>
-                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"}>
+                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"} src={"/opportunityx.jpg"} width={300} height={100} alt={"Opportunity X"}>
                         Presented ISS research on light angle and solar panel voltage
                     </InfoCard>
                     <InfoCard name={"International Online Science Project Competition (INTOC)"} role={"Silver Award"}>
                         Presented ISS research on light angle and solar panel voltage
+                        <ImageCarouselContainer>
+                            <Image src={"/intocinsta.png"} alt={"INTOC Instagram Post by SST"} width={50}
+                                   height={50}
+                                   className={"flex-1"}/>
+                            <Image src={"/INTOC.jpg"} alt={"INTOC"} width={50}
+                                   height={50}
+                                   className={"flex-1"}/>
+                        </ImageCarouselContainer>
                     </InfoCard>
                     <InfoCard name={"Young Technopreneurship Challenge"} role={"Participation"}>
                         Pitched an AR app for phone repairs
@@ -401,14 +412,14 @@ export default function Home() {
                         for AI and ML and also scored a <p className={"inline-block font-bold"}>Distinction and Best
                         Overall Award</p>.
                     </div>
-                    <div className={"flex flex-row space-x-2 justify-around overflow-x-scroll"}>
+                    <ImageCarouselContainer>
                         <Image src={"/sensetime_bootcamp/award.jpg"} alt={"Sensetime AI Bootcamp"} width={500}
                                height={200}
                                className={"flex-1"}/>
                         <Image src={"/sensetime_bootcamp/presentation.png"} alt={"Sensetime AI Bootcamp"} width={500}
                                height={200}
                                className={"flex-1"}/>
-                    </div>
+                    </ImageCarouselContainer>
                 </InfoCard>
             </Container>
 
