@@ -11,7 +11,7 @@ config.autoAddCss = false;
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPython, faSwift, faRust} from "@fortawesome/free-brands-svg-icons";
-import {faArrowDown, faArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
 import Container from "@/components/container";
@@ -35,13 +35,13 @@ export default function Home() {
                 <Image src={"/profile_photo.jpg"} alt={""} width={300} height={300}
                        className={"aspect-square w-80 h-80 object-cover rounded-full ring-2 ring-white"}/>
                 <Socials/>
-                <a href={"/certificates.pdf"}
-                    className={"mt-5 rounded-full border-2 flex justify-center bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105"}>
-                    <div className={"p-3 flex-row justify-center text-lg space-y-2"}>
-                        <p>Certificates <FontAwesomeIcon icon={faArrowRight}
-                                                         className={"fas fa-arrow-right inline-block"} size={"lg"}/></p>
-                    </div>
-                </a>
+                {/*<a href={"/certificates.pdf"}*/}
+                {/*    className={"mt-5 rounded-full border-2 flex justify-center bg-gradient-to-r from-blue-500 to-purple-500 hover:scale-105"}>*/}
+                {/*    <div className={"p-3 flex-row justify-center text-lg space-y-2"}>*/}
+                {/*        <p>Certificates <FontAwesomeIcon icon={faArrowRight}*/}
+                {/*                                         className={"fas fa-arrow-right inline-block"} size={"lg"}/></p>*/}
+                {/*    </div>*/}
+                {/*</a>*/}
 
                 <div className={"h-1/6"}/>
 
