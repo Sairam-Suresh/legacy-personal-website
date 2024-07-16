@@ -6,11 +6,8 @@ import React from "react";
 import Socials from "@/components/socials";
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import {config} from "@fortawesome/fontawesome-svg-core";
-
-config.autoAddCss = false;
-
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPython, faSwift, faRust} from "@fortawesome/free-brands-svg-icons";
+import {faPython, faRust, faSwift} from "@fortawesome/free-brands-svg-icons";
 import {faArrowDown} from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import ViewInGithub from "@/components/view_in_github";
@@ -19,6 +16,8 @@ import Link from "next/link";
 import ViewInGDrive from "@/components/view_in_gdrive";
 import ViewInStore from "@/components/view_in_store";
 import ImageCarouselContainer from "@/components/image_carousel_container";
+
+config.autoAddCss = false;
 
 export default function Home() {
     return (
@@ -55,11 +54,13 @@ export default function Home() {
                 <div className={"h-1/6"} id={"aboutme"}/>
             </div>
 
+            {/* Header */}
+            {/* This part adds a black background to the bar to make it look better */}
             <div
                 className={"h-1/3 w-full sticky top-5 select-none lg:m-2 md:m-auto hidden lg:block z-0"}>
                 <div className={"h-5 w-full bg-black"}/>
             </div>
-
+            {/* Header itself */}
             <div
                 className={"h-1/3 w-full sticky top-0 select-none lg:m-2 md:m-auto hidden lg:block z-10"}>
                 <div className={"h-5 w-full bg-black"}/>
@@ -130,7 +131,7 @@ export default function Home() {
                     programming journey</p>
 
                 <InfoCard src={"/mathx.png"} name={"MathX"} width={150} height={150}
-                          className={"rounded-3xl aspect-square m-auto"} role={"Developer (Android Side)"}>
+                          className={"aspect-square"} role={"Developer (Android Side)"}>
                     <p>
                         I was given the task to redevelop the android version of the MathX App, made by SST Inc.
                         I remade the app in Flutter, Google's Cross Platform Development Toolkit.
@@ -143,7 +144,7 @@ export default function Home() {
                 </InfoCard>
 
                 <InfoCard src={"/announcer.png"} name={"SST Announcer"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Developer (Android Side)"}>
                     <p>
                         I was given the task to redevelop the android version of the SST Announcer App, made by SST Inc.
@@ -157,7 +158,7 @@ export default function Home() {
                 </InfoCard>
 
                 <InfoCard src={"/stacked.png"} name={"Stacked (WIP)"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Creator and Flutter Developer"}>
                     <p>
                         In order to help out my Scout Unit with their admin duties, I am in the progress of creating an
@@ -170,7 +171,7 @@ export default function Home() {
                 <InfoCard src={"/placeholder.png"}
                           name={"Tello Drone Controller (WIP)"}
                           width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Creator and Flutter Developer"}>
                     <p>
                         In this hobbyist project, I experiment with the DJI Tello Drone's SDK and build the most
@@ -180,7 +181,7 @@ export default function Home() {
                 <InfoCard src={"/placeholder.png"}
                           name={"Green Boxes"}
                           width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Creator and Flutter Developer"}>
                     <p>
                         I created this app for my competitions in Discover Week 2024 and IDEX by ACSI
@@ -200,7 +201,7 @@ export default function Home() {
                 <InfoCard src={"/calculator.png"}
                           name={"Calculator"}
                           width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Creator and Python Developer"}>
                     <p>
                         I created this Python Calculator App to obtain the Computer Badge in
@@ -302,14 +303,16 @@ export default function Home() {
                     </InfoCard>
                     <InfoCard name={"NUS Illustratum - A Hallway Physics Competition"} role={"Merit Award"}
                     src={"/illustratumaward.jpg"} alt={"Illustratum Merit Award"} width={200} height={500}
-                    className={"rounded-lg"}>
+                              className={"rounded-lg m-auto"}>
                         Used modelling to demonstrate the three-body problem, obtained a merit award
                     </InfoCard>
                     <InfoCard name={"Singapore Science and Engineering Fair"} role={"Participation"}>
                         Presented ISS research on light angle and solar panel voltage
                     </InfoCard>
                     <div className="font-bold text-center text-2xl">2022</div>
-                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"} src={"/opportunityx.jpg"} width={300} height={100} alt={"Opportunity X"}>
+                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"} src={"/opportunityx.jpg"} width={300}
+                              height={100} alt={"Opportunity X"}
+                              className={""}>
                         Presented ISS research on light angle and solar panel voltage
                     </InfoCard>
                     <InfoCard name={"International Online Science Project Competition (INTOC)"} role={"Silver Award"}>
@@ -350,7 +353,7 @@ export default function Home() {
                 </p>
 
                 <InfoCard src={"/engineering_good.png"} name={"S301 Service Learning Project (2023)"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Assisted in creating presentation materials"}>
                     <p>
                         I assisted my class in creating the presentation materials in our service learning project with
@@ -360,7 +363,7 @@ export default function Home() {
 
                 <InfoCard src={"/dcb.png"}
                           name={"Cyber Wellness Student Ambassador Programme Outreach to Primary Schools"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Tech Support / Running Committee"}>
                     <p>
                         In the years 2022 and 2023, I helped with setting up the logistics for this programme,
@@ -369,7 +372,7 @@ export default function Home() {
                 </InfoCard>
 
                 <InfoCard name={"National Day Commemoration 2023"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Part of Parade Contingent"}>
                     <p>
                         I was part of the Parade Contingent for this event.
@@ -377,7 +380,7 @@ export default function Home() {
                 </InfoCard>
 
                 <InfoCard name={"Sec 2 Learning Alliance Beyond Borders (Vietnam) 2022"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Participant"}>
                     <p>
                         My team and I presented about a problem that we had in Singapore and our solution to it
@@ -385,7 +388,7 @@ export default function Home() {
                 </InfoCard>
 
                 <InfoCard name={"Service at Scout West Area Bicycle and Cycling Workshop 2022"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Participant"}>
                     <p>
                         I assisted with the programme by setting up logistics for participants' usage
@@ -397,7 +400,7 @@ export default function Home() {
                 <Header text={"Events"} id={"events"}/>
                 <p className={"text-center"}>These are some programmes that I have participated in.</p>
                 <InfoCard name={"Swift Accelerator Programme"} src={"/sap.png"} width={150}
-                          height={150} className={"rounded-3xl aspect-square m-auto"}
+                          height={150} className={"aspect-square"}
                           role={"Participant"}>
                     <p>
                         I participated in the Swift Accelerator Programme where I learnt more
@@ -405,7 +408,7 @@ export default function Home() {
                     </p>
                 </InfoCard>
 
-                <InfoCard name={"Sensetime x CodingLab AI Bootcamp"} className={"rounded-3xl aspect-square m-auto"}
+                <InfoCard name={"Sensetime x CodingLab AI Bootcamp"} className={"aspect-square"}
                           role={"Participant"}>
                     <div>
                         I participated in this AI Bootcamp, where I learnt more about using Python
@@ -426,7 +429,7 @@ export default function Home() {
             <Container>
                 <Header text={"Certifications"} id={"certifications"}/>
                 <InfoCard name={"App Development with Swift - Associate"} role={"925/1000"}
-                          src={"/app_dev_with_swift_assoc.png"} width={200} height={400} className={"m-auto lg:m-0"}>
+                          src={"/app_dev_with_swift_assoc.png"} width={200} height={400} className={"lg:m-0"}>
                     I managed to score 925/1000 for my App Development with Swift - Associate Certification Examination
                     from the Swift Accelerator Programme
                 </InfoCard>

@@ -35,10 +35,12 @@ function InfoCard(props: ProjectCardProps) {
                     </Center>
                 </div>
 
-                <div>
+                <div className={"flex justify-center"}>
+                    {/* + props.className */}
                     {props.src != null ? <Image src={props.src} alt={props.alt ?? props.name}
                                                 width={props.width!}
-                                                height={props.height!} className={props.className}/> : <></>}
+
+                                                height={props.height!} className={"m-auto rounded-3xl lg:m-"}/> : <></>}
                 </div>
             </div>
         </div>
