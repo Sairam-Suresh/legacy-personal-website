@@ -19,6 +19,7 @@ import ImageCarouselContainer from "@/components/image_carousel_container";
 
 config.autoAddCss = false;
 
+// 260 * 512 Minimum size for proper render
 export default function Home() {
     return (
         <main
@@ -303,16 +304,14 @@ export default function Home() {
                     </InfoCard>
                     <InfoCard name={"NUS Illustratum - A Hallway Physics Competition"} role={"Merit Award"}
                     src={"/illustratumaward.jpg"} alt={"Illustratum Merit Award"} width={200} height={500}
-                              className={"rounded-lg m-auto"}>
+                    className={"rounded-lg"}>
                         Used modelling to demonstrate the three-body problem, obtained a merit award
                     </InfoCard>
                     <InfoCard name={"Singapore Science and Engineering Fair"} role={"Participation"}>
                         Presented ISS research on light angle and solar panel voltage
                     </InfoCard>
                     <div className="font-bold text-center text-2xl">2022</div>
-                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"} src={"/opportunityx.jpg"} width={300}
-                              height={100} alt={"Opportunity X"}
-                              className={""}>
+                    <InfoCard name={"Opportunity X"} role={"3rd Team Placing"} src={"/opportunityx.jpg"} width={300} height={100} alt={"Opportunity X"}>
                         Presented ISS research on light angle and solar panel voltage
                     </InfoCard>
                     <InfoCard name={"International Online Science Project Competition (INTOC)"} role={"Silver Award"}>
@@ -423,6 +422,10 @@ export default function Home() {
                                height={200}
                                className={"flex-1"}/>
                     </ImageCarouselContainer>
+                </InfoCard>
+
+                <InfoCard name={"#ProjectSF"} role={"Participant"} src={"/projectsf.jpg"} alt={"#ProjectSF"} height={150} width={150} className={"aspect-square"}>
+                I participated in #ProjectSF, where I learnt more about the startup culture in Silicon Valley.
                 </InfoCard>
             </Container>
 
